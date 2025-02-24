@@ -124,11 +124,11 @@ This will run all the tests defined across the project.
 
 ## Contributing
 
-If you wish to contribute, please fork the repository, create a new branch, and submit a pull request. Contributions are always welcome!
+Contributions are welcomed! Please see the [Contributing Guide](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and contribute to the project.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
