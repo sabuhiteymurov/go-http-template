@@ -1,0 +1,14 @@
+{
+  "database_functions": {
+    "GetEvents": "get_events",
+    "FindEvent": "find_event"
+  },
+  "database_procedures": {
+    "CreateEvent": "create_event",
+    "UpdateEvent": "update_event"
+  },
+  "schemas": {
+    "Public": "public",
+    "Auth": "auth"
+  }
+}
