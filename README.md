@@ -37,8 +37,8 @@ You can use this template in two ways:
 
 2. **Direct Clone**:
    ```bash
-   git clone https://github.com/sabuhiteymurov/go-net_http-template.git
-   cd go-net_http-template
+   git clone https://github.com/sabuhiteymurov/go-http-template.git
+   cd go-http-template
    ```
 
 ### 2. Install Dependencies
