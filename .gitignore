@@ -58,6 +58,3 @@ debug
 # Temporary files
 tmp/
 temp/
-
-# Documentation
-docs/

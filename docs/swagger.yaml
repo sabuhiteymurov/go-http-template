@@ -1,0 +1,141 @@
+basePath: /
+definitions:
+  models.Event:
+    properties:
+      date_time:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      location:
+        type: string
+      name:
+        type: string
+      user_id:
+        type: integer
+    required:
+    - date_time
+    - description
+    - location
+    - name
+    type: object
+  requests.UpdateEventRequest:
+    properties:
+      description:
+        maxLength: 500
+        type: string
+      location:
+        maxLength: 255
+        minLength: 3
+        type: string
+      name:
+        maxLength: 255
+        minLength: 3
+        type: string
+    type: object
+  responses.ErrorResponse:
+    properties:
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+host: localhost:3001
+info:
+  contact: {}
+  description: Api docs for net-http template
+  title: Api Documentation
+  version: "1.0"
+paths:
+  /events:
+    get:
+      description: |-
+        Get all events
+        Returns user events
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Events
+      tags:
+      - Events
+    post:
+      consumes:
+      - application/json
+      description: Create a new event
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Event'
+      tags:
+      - Events
+  /events/{eventId}:
+    delete:
+      description: Deletes an event
+      parameters:
+      - description: Event ID
+        in: path
+        name: eventId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+      tags:
+      - Events
+    get:
+      description: Get details of a specific event
+      parameters:
+      - description: Event Id
+        in: path
+        name: eventId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Event'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/responses.ErrorResponse'
+      tags:
+      - Events
+    patch:
+      consumes:
+      - application/json
+      description: Update details of a specific event
+      parameters:
+      - description: Event ID
+        in: path
+        name: eventId
+        required: true
+        type: string
+      - description: Updated event details
+        in: body
+        name: event
+        required: true
+        schema:
+          $ref: '#/definitions/requests.UpdateEventRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Event'
+      tags:
+      - Events
+swagger: "2.0"
